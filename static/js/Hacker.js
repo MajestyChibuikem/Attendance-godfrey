@@ -1,7 +1,6 @@
-// Simulated hacker terminal output
 const outputElement = document.getElementById('output');
 
-// Array of random commands or fake data for the effect
+//faux messages
 const messages = [
     "Initializing System...",
     "Connecting to Server...",
@@ -69,7 +68,6 @@ const messages = [
     "System Rebooting..."
 ];
 
-// Function to simulate typing effect
 let messageIndex = 0;
 let charIndex = 0;
 
@@ -78,13 +76,13 @@ function typeMessage() {
     if (charIndex < currentMessage.length) {
         outputElement.innerHTML += currentMessage.charAt(charIndex);
         charIndex++;
-        setTimeout(typeMessage, 10); // Adjust speed here (milliseconds)
+        setTimeout(typeMessage, 10); 
     } else {
-        // Move to next message after a slight delay
+        
         setTimeout(() => {
             messageIndex++;
             if (messageIndex < messages.length) {
-                outputElement.innerHTML += "\n"; // Add line break between messages
+                outputElement.innerHTML += "\n"; 
                 charIndex = 0;
                 typeMessage();
             }
@@ -92,9 +90,8 @@ function typeMessage() {
     }
 }
 
-// Start the terminal typing effect after the page loads
+//start
 window.onload = () => {
-    // Make the terminal visible and start typing effect
     document.getElementById('hacker-terminal').style.display = 'block';
     typeMessage();
 };

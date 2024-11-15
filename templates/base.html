@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+</head>
+<body>
+    <div id="hacker-terminal" class="hacker-terminal">
+        <pre id="output"></pre>
+    </div>
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/Hacker.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/registration.js') }}"></script>
+</body>
+</html>
