@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="reg-container">
-    <form action="/submit-login" method="post">
+    <form action="{{ url_for('submit_login') }}" method="post">
         <div class="img">
             <img src="{{ url_for('static', filename='image/Designer.jpeg') }}" alt="">
         </div>
