@@ -96,4 +96,3 @@ Let's say `uuid.getnode()` returns the integer `281474976710655`. The function w
 
 The final MAC address string will be `ff:ff:ff:ff:ff:ff`.
 
-This approach ensures that the MAC address is correctly formatted and stored in the database. If you have any more questions or need further assistance, feel free to ask!

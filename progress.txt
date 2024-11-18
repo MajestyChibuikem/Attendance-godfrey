@@ -1,0 +1,44 @@
+using a web based app directly is basically not possible always
+some mobile apps dont give the correct mac address
+so i cant get the correct mac which means the attendance cant be taken
+
+the first method tried worked (technically) but the mac address for two
+different devices were the same which fails the requirement for each device
+to have the mac as a unique identifier
+
+the next choice for me is to create it as a mobile application
+my wifi router can 90% of times accurately get the device mac address
+this seems to come from the fact routers work on the basic network level
+but my web app works on a higher level making it unable to accurately get the addresses
+
+
+i have chosen instead to go the app route
+
+frontend
+
+each app downloaded will generate a unique device id when the app is first downloaded
+the id will be sent to the backend after user registration
+id will be binded to the user account and the key wil be stored securely
+backend
+
+i will store the id and key in a database along the users details
+when the mobile app sends attendance data, the key and id will be validated
+the attendance will be recorded if (dataisvalid)
+
+
+key cloning and sharing
+the key will be paired with the hardware based cryptographic capabilities
+-using KeyPair(Android keystore, ios secure enclave)
+
+
+tokens
+JWT
+
+
+Secure hardware identifiers
+i will use system APIs to retrieve user hardware-specific identifiers
+Android - Settings.Secure.Android
+Ios - identifierForVendor
+
+i will also ensure api requests are made https
+se token based authentication for secure communication between the app and backend
